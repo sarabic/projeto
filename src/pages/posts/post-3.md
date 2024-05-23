@@ -5,7 +5,7 @@ pubDate: 2022-07-15
 description: "I had some challenges, but asking in the community really helped!"
 author: "Astro Learner"
 image:
-    url: "https://docs.astro.build/assets/rays.webp"
+    url: "/img/The-Super-Duper-Product.png"
     alt: "Thumbnail of Astro rays."
 tags: ["astro", "learning in public", "setbacks", "community"]
 ---

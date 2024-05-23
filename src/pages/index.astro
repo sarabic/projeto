@@ -2,6 +2,16 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "Home Page";
 ---
-<BaseLayout pageTitle={pageTitle}>
-  <h2>My awesome blog subtitle</h2>
+
+<BaseLayout>
+    <main class="container">
+      <section class="sub-header">
+        <h1><span>Hello, I'm Sara,</span></h1>
+        <h1>Digital<br />Designer</h1>
+        <h1><span>based in Lisbon</span></h1>
+        <figure class="abstract-figure">
+            <img src="/img/image.png" alt="Three abstract green, lilac, yellow and pink drawings" />
+        </figure>
+    </section>
+    </main>
 </BaseLayout>

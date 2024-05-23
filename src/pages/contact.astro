@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "My Contact";
+import Social from '../components/Social.astro';
+---
+<BaseLayout pageTitle={pageTitle}>
+    <p>This is where I will put my contact info.</p>
+    <main class="container"></main>
+        <div class="footer-top">
+            <div class="footertop-left">
+                <h2>Let's Work Together</h2>
+                <h3>Fill this form to contact me and start working with me!</h3>
+                <a href="https://www.linkedin.com" target="_blank"><img class="icons" src="/img/linkedin.svg" alt="black linkedin logo" /></a>
+                <a href="https://www.slack.com" target="_blank"><img class="icons" src="/img/slack.svg" alt="black slack logo" /></a> 
+                <a href="https://www.instagram.com" target="_blank"><img class="icons" src="/img/instagram.svg" alt="black facebook logo" /></a> 
+                <a href="https://www.behance.com" target="_blank"><img class="icons" src="/img/behance.svg" alt="black behance logo" /></a> 
+                <a href="https://www.facebook.com" target="_blank"><img class="icons" src="/img/facebook.svg" alt="black facebook logo" /></a> 
+                <a href="mailto:bicudo.sara@gmail.com" target="_blank"><img class="icons" src="/img/email.svg" alt="black mail logo" /></a>
+                <Social platform="twitter" username="astrodotbuild" />
+                <Social platform="github" username="withastro" />
+                <Social platform="youtube" username="astrodotbuild" />
+            </div>
+            <div class="text-fields">
+                <label for="name">Name</label>
+                <input id="name" class="write-something" placeholder="Ex: Sara Bicudo" type="text" />
+                <label for="email">Email</label>
+                <input id="email" class="write-something" placeholder="Ex: bicudo.sara@gmail.com" type="email" />
+                <label for="message">Message</label>
+                <textarea id="message" class="write-something-1" placeholder="Start typing your message here..."></textarea>
+                <a class="button" href="javascript:SubmitForm('form1')">Submit</a>
+            </div>
+        </div>
+    </main>
+</BaseLayout>

@@ -3,9 +3,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "About Me";
 ---
 <BaseLayout pageTitle={pageTitle}>
-  <h2>... and my new Astro site!</h2>
-  
-  <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
-  
-  <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
+    <main class="container">
+      <h2>About Me</h2>
+      <div class="about-me_content">
+          <div class="photo-sara-and-name">
+              <figure class="sara">
+                  <img src="/img/sara.png" alt="Portrait picture of Sara Bicudo" />
+                  <figcaption class="centered-text">
+                      <h3>Sara Silva de Almeida Bicudo</h3>
+                      <p>22 years old</p>
+                  </figcaption>
+              </figure>
+          </div>
+          <div class="text">
+              <h4>Bio:</h4>
+              <p>"I am a highly motivated, proactive, dedicated, and <strong>critically minded</strong> person.</p>
+              <p>I completed the <strong>UX/UI Design</strong> course at the Lisbon School of Design and am about to finish the Postgraduate Degree in <strong>Digital Experience Design</strong> at the Faculty of Fine Arts of the University of Lisbon. Currently, as the Human Resources Coordinator at ESN Lisboa, I incorporate <strong>human and organizational aspects</strong> into my approach to the digital world.</p>
+              <p>My motivation stems from a <strong>passion for digital design</strong> and a commitment to <strong>humanize technology</strong>, aiming to create meaningful experiences for users.</p>
+              <p>Come discover how my experience and skills can <strong>meet your needs</strong>!"</p>
+          </div>
+      </div>
+    </main>
 </BaseLayout>

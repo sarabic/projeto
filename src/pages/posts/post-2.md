@@ -5,7 +5,7 @@ pubDate: 2022-07-08
 description: "After learning some Astro, I couldn't stop!"
 author: "Astro Learner"
 image:
-    url: "https://docs.astro.build/assets/arc.webp"
+    url: "/img/FBAUL-Estudantes-Internacionais.png"
     alt: "Thumbnail of Astro arcs."
 tags: ["astro", "blogging", "learning in public", "successes"]
 ---

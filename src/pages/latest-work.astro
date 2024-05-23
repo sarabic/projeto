@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const allPosts = await Astro.glob('../pages/posts/*.md');
+const pageTitle = "Latest Work";
+---
+<BaseLayout pageTitle={pageTitle}>
+    <main class="container">
+        <p>This is where I will post about my journey learning Astro.</p>
+        <ul>
+            {allPosts.map((post) => <li><a href={post.url}><img class="work-img" src={post.frontmatter.image.url}>{post.frontmatter.title}{post.frontmatter.description}</a></li>)}
+        </ul>
+
+        <ul class="work-content">
+            <li>
+                <figure class="work-container">
+                    <img class="work-img" src="/img/Whatsapp-AI-Sticker-Feature.png" alt="Figma Board of the UX/UI Project of the Whatsapp AI Sticker Feature" />
+                    <h3>Whatsapp AI Sticker Feature</h3>
+                    <h4>DXD Project</h4>
+                    <p>FBAUL</p>
+                </figure>
+            </li>
+            <li>
+                <figure class="work-container">
+                    <img class="work-img" src="/img/FBAUL-Estudantes-Internacionais.png" alt="Figma Board of the UX/UI Project of the Refurbishing of the FBAUL Website UX/UI Project" />
+                    <figcaption>
+                        <h3>Refurbishing of the FBAUL Website</h3>
+                        <h4>DXD Project</h4>
+                        <p>FBAUL</p>
+                    </figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure class="work-container">
+                    <img class="work-img" src="/img/The-Super-Duper-Product.png" alt="Figma Board of the UX/UI Project of the Refurbishing of the Super Duper Product" />
+                    <figcaption>
+                        <h3>The Super Duper Product</h3>
+                        <h4>User Interface Project</h4>
+                        <p>FBAUL</p>
+                    </figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure class="work-container">
+                    <img class="work-img" src="/img/Digipath.png" alt="Figma Board of the UX/UI Digipath Project" />
+                    <figcaption>
+                        <h3>Digipath</h3>
+                        <h4>Design Job Quiz</h4>
+                        <p>FBAUL</p>
+                    </figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure class="work-container">
+                    <img class="work-img" src="/img/SEVA.png" alt="Figma Board of the SEVA Eventos Webdesign Project" />
+                    <figcaption>
+                        <h3>SEVA Eventos</h3>
+                        <h4>Events Agengy's Website</h4>
+                        <p>Faculdade de Ciências Humanas</p>
+                    </figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure class="work-container">
+                    <img class="work-img" src="/img/Plus-One.png" alt="Figma Board of the Plus One Sports App UX/UI Project" />
+                    <figcaption>
+                        <h3>Plus One</h3>
+                        <h4>Sports Connections App</h4>
+                        <p>Lisbon School of Design</p>
+                    </figcaption>
+                </figure>
+            </li>
+        </ul>
+    </main>
+</BaseLayout>
