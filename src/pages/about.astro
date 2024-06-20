@@ -2,13 +2,69 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "About Me";
 ---
+
+<head>
+    <style>
+        .sara {
+            position: relative;
+            left: 50%; /* Move to the horizontal center */
+            transform: translateX(-50%); /* Adjust to center the element */
+            width: 90%; /* Adjust the size for mobile */
+            height: auto;
+        }
+
+        .about-me_content h3 {
+            font-size: 1rem;
+            padding-bottom: 0;
+            text-align: center;
+        }
+
+        .about-me_content h4 {
+            font-weight: 700;
+        }
+        
+        @media only screen and (min-width: 550px) {
+
+            .sara,
+            .text {
+                width: 50%;
+            }
+            }
+
+        @media only screen and (min-width: 870px) {
+
+            .sara {
+                width: 90%;
+                transform: none;
+                left: 0;
+            }
+
+            .text {
+            width: 50%;
+            transform: none;
+            }
+
+            .about-me_content {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+
+            .about-me_content h3 {
+                margin: 0;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
 <BaseLayout pageTitle={pageTitle}>
-    <main class="container">
-      <h2>About Me</h2>
+    <main>
       <div class="about-me_content">
           <div class="photo-sara-and-name">
               <figure class="sara">
-                  <img src="/img/sara.png" alt="Portrait picture of Sara Bicudo" />
+                  <img src="/assets/img/sara.png" alt="Portrait picture of Sara Bicudo" />
                   <figcaption class="centered-text">
                       <h3>Sara Silva de Almeida Bicudo</h3>
                       <p>22 years old</p>

@@ -1,17 +1,45 @@
 ---
 import Social from './Social.astro';
 ---
-<style>
-    footer {
-      display: flex;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
+<head>
+  <style>
+      footer {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+      #contact {
+        padding-bottom: 15px;
+      }
+
+      .footer-bottom {
+        display: block;
+        flex-direction: column;
+        justify-content: left;
+        padding: 10px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.2); /* Adjust the border style and color */
+        text-align: center;
+      }
+
+      .footer-bottom p {
+        font-size: 0.7rem;
+      }
+
+      @media only screen and (min-width: 870px) {
+        .footer-bottom {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+      }
   </style>
+</head>
 
 <footer>
     <div class="footer-bottom">
       <p class="footer-left">Copyright © 2024 Sara Bicudo</p>
       <p class="footer-right"><a href="/" target="_blank">All Rights Reserved</a><span>|</span><a href="/" target="_blank">Terms and Conditions</a><span>|</span><a href="/" target="_blank">Privacy Policy</a></p>
   </div>
+  <Social />
 </footer>

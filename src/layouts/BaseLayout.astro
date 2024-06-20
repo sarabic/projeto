@@ -11,16 +11,19 @@ const { pageTitle } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
   </head>
-  <body>
+  <body class="container">
     <Header />
     <h1>{pageTitle}</h1>
     <slot />
-    <Footer />
     <style>
         h1 {
-          color: purple;
-          font-size: 4rem;
+          font-size: 2.5rem;
+          margin-top: 6rem;
+          padding: 0;
         }
     </style>
     <script>

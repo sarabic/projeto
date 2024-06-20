@@ -4,21 +4,144 @@ const pageTitle = "My Contact";
 import Social from '../components/Social.astro';
 ---
 <BaseLayout pageTitle={pageTitle}>
+    <head>
+        <style>
+            footer {
+                display: flex;
+                gap: 1rem;
+                margin-top: 2rem;
+            }
+
+            #contact {
+                padding-bottom: 15px;
+            }
+
+            .footer-top {
+                display: block;
+                flex-direction: column;
+                justify-content: left;
+                gap: 16px;
+                text-align: center;
+                margin-bottom: 50px;
+                padding-top: 0px;
+            }
+
+            .footer-top h2 {
+                padding-bottom: 16px;
+                margin: 0 auto;
+                max-width: 90%;
+            }
+
+            .footer-top h3 {
+                text-align: center;
+                font-weight: 300;
+                padding-bottom: 20px;
+                max-width: 90%;
+                margin: 0 auto;
+            }
+
+            .text-fields {
+                display: inline-flex;
+                flex-direction: column;
+                gap: 20px;
+                width: 50%;
+            }
+
+            .write-something {
+                background-color: #ddd;
+                color: #2D2D2D;
+                line-height: 20px;
+                font-size: 0.80rem;
+                margin: 0;
+                font-weight: 200;
+                padding: 0 0 0 10px;
+                position: relative;
+                border: none;
+                border-radius: 5px;
+                width: 100%;
+                height: 40px;
+            }
+
+            .write-something-1 {
+                background-color: #ddd;
+                color: #2D2D2D;
+                line-height: 20px;
+                font-size: 0.80rem;
+                margin: 0;
+                font-weight: 200;
+                padding: 0 0 0 10px;
+                position: relative;
+                border: none;
+                border-radius: 5px;
+                width: 100%;
+                padding-top: 10px;
+                height: 100px;
+            }
+
+            .button {
+                align-items: center;
+                color: white;
+                font-weight: 200;
+                background-color: #2D2D2D;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                width: 50%;
+                height: 40px;
+            }
+
+            .button:hover {
+                color: white;
+                background-color: #ddd;
+            }
+
+            .icons {
+                width: auto;
+                height: 25px;
+                padding-right: 12px;
+                text-align: center;
+                margin: 0 auto;
+            }
+
+
+            .footertop-left {
+                margin-bottom: 32px;
+            }
+
+            .footer-right a {
+                margin: 4px;
+            }
+            
+            @media only screen and (min-width: 870px) {
+
+                .footer-top {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    text-align: left;
+                    padding-bottom: 20px;
+                }
+
+                .footer-top h2,
+                .footer-top h3 {
+                    text-align: left;
+                    margin: 0;
+                }
+
+                .button {
+                    width: 30%;
+                }
+            }
+
+        </style>
+    </head>
     <p>This is where I will put my contact info.</p>
-    <main class="container"></main>
+    <main>
         <div class="footer-top">
             <div class="footertop-left">
                 <h2>Let's Work Together</h2>
                 <h3>Fill this form to contact me and start working with me!</h3>
-                <a href="https://www.linkedin.com" target="_blank"><img class="icons" src="/img/linkedin.svg" alt="black linkedin logo" /></a>
-                <a href="https://www.slack.com" target="_blank"><img class="icons" src="/img/slack.svg" alt="black slack logo" /></a> 
-                <a href="https://www.instagram.com" target="_blank"><img class="icons" src="/img/instagram.svg" alt="black facebook logo" /></a> 
-                <a href="https://www.behance.com" target="_blank"><img class="icons" src="/img/behance.svg" alt="black behance logo" /></a> 
-                <a href="https://www.facebook.com" target="_blank"><img class="icons" src="/img/facebook.svg" alt="black facebook logo" /></a> 
-                <a href="mailto:bicudo.sara@gmail.com" target="_blank"><img class="icons" src="/img/email.svg" alt="black mail logo" /></a>
-                <Social platform="twitter" username="astrodotbuild" />
-                <Social platform="github" username="withastro" />
-                <Social platform="youtube" username="astrodotbuild" />
             </div>
             <div class="text-fields">
                 <label for="name">Name</label>

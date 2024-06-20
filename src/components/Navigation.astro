@@ -1,5 +1,152 @@
 ---
 ---
+<header>
+    <style>
+        /* nav styles */
+
+        .nav-links {
+        width: 100%;
+        top: 5rem;
+        left: 48px;
+        background-color: #ff9776;
+        display: none;
+        margin: 0;
+        }
+
+        .nav-links a {
+        display: block;
+        text-align: center;
+        padding: 10px 0;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+        background-color: #ff9776;
+        }
+
+        .expanded {
+        display: unset;
+        }
+
+
+        /* Navigation styling */
+
+        .navigation {
+        height: 72px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 1);
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        }
+
+        .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 72px;
+        }
+
+        .nav-menu {
+        position: fixed;
+        display: none;
+        top: 4rem;
+        padding: 20px 0 20px 16px;
+        flex-direction: column;
+        background-color: #fff;
+        width: 120px;
+        border-radius: 10px;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-menu a {
+        float: left;
+        color: #2D2D2D;
+        text-align: center;
+        padding: 14px 16px;
+        font-size: 1rem;
+        }
+
+        .nav-menu a:hover {
+        background-color: #ddd;
+        border-radius: 5%;
+        color: #2D2D2D;
+        }
+
+        .nav-menu.active {
+        right: 20px;
+        display: block;
+        }
+
+        .nav-link {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-weight: 400;
+        height: 16px;
+        width: 70px;
+        }
+
+        .logo {
+        font-size: 1.25rem;
+        font-weight: 600;
+        height: 16px;
+        line-height: 48px;
+        margin: 0;
+        white-space: nowrap;
+        position: fixed;
+        top: 14px;
+        left: 32px;
+        }
+
+        @media only screen and (min-width: 870px) {
+            .nav-menu {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                right: 24px;
+                top: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            .nav-menu.active {
+                right: 32px;
+                display: flex;
+            }
+
+            .nav-item {
+                margin: 0;
+            }
+
+            .nav-link {
+                width: 70px;
+            }
+        }
+
+        @media screen and (min-width: 636px) {
+            .nav-links {
+                margin-left: 5em;
+                display: block;
+                position: static;
+                width: auto;
+                background: none;
+            }
+
+            .nav-links a {
+                display: inline-block;
+                padding: 15px 20px;
+            }
+        }
+    </style>
+</header>
 <div class="navigation">
     <nav class="navbar nav-links">
         <a href="/" class="logo">My Portfolio</a>
