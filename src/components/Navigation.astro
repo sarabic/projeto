@@ -2,55 +2,11 @@
 ---
 <header>
     <style>
-        /* nav styles */
-
-        .nav-links {
-        width: 100%;
-        top: 5rem;
-        left: 48px;
-        background-color: #ff9776;
-        display: none;
-        margin: 0;
-        }
-
-        .nav-links a {
-        display: block;
-        text-align: center;
-        padding: 10px 0;
-        text-decoration: none;
-        font-size: 1.2rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        }
-
-        .nav-links a:hover,
-        .nav-links a:focus {
-        background-color: #ff9776;
-        }
-
-        .expanded {
-        display: unset;
-        }
-
-
-        /* Navigation styling */
-
-        .navigation {
-        height: 72px;
-        width: 100%;
-        background-color: rgba(255, 255, 255, 1);
-        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 2;
-        }
-
         .navbar {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 72px;
+        height: inherit;
         }
 
         .nav-menu {
@@ -67,10 +23,10 @@
         }
 
         .nav-menu a {
-        float: left;
+        float: center;
         color: #2D2D2D;
         text-align: center;
-        padding: 14px 16px;
+        padding: 16px 16px;
         font-size: 1rem;
         }
 
@@ -83,79 +39,96 @@
         .nav-menu.active {
         right: 20px;
         display: block;
+        padding: 20px;
+        justify-content: center;
+        width: 140px;
         }
 
         .nav-link {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         font-weight: 400;
-        height: 16px;
-        width: 70px;
+        height: 40px;
+        width: 100%;
         }
 
         .logo {
         font-size: 1.25rem;
         font-weight: 600;
-        height: 16px;
         line-height: 48px;
         margin: 0;
-        white-space: nowrap;
         position: fixed;
-        top: 14px;
         left: 32px;
         }
 
         @media only screen and (min-width: 870px) {
             .nav-menu {
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-end;
-                right: 24px;
-                top: 0;
-                padding: 0;
-                box-shadow: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            top: -0.5rem;
+            right: 24px;
+            padding: 8px;
+            box-shadow: none;
+            width: auto;
+            position: fixed;
+            background-color: transparent;
             }
 
             .nav-menu.active {
-                right: 32px;
-                display: flex;
+            right: 32px;
+            display: flex;
+            width: auto;
+            margin: 8px;
             }
 
             .nav-item {
-                margin: 0;
+            margin: 0;
+            width: auto;
+            height: 40px;
             }
 
             .nav-link {
-                width: 70px;
-            }
-        }
-
-        @media screen and (min-width: 636px) {
-            .nav-links {
-                margin-left: 5em;
-                display: block;
-                position: static;
-                width: auto;
-                background: none;
-            }
-
-            .nav-links a {
-                display: inline-block;
-                padding: 15px 20px;
+            width: auto;
+            height: 40px;
             }
         }
     </style>
 </header>
-<div class="navigation">
-    <nav class="navbar nav-links">
-        <a href="/" class="logo">My Portfolio</a>
-        <ul class="nav-menu">
-            <li class="nav-item"><a href="/about/" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="/skills/" class="nav-link">Skills</a></li>
-            <li class="nav-item"><a href="/latest-work/" class="nav-link">Work</a></li>
-            <li class="nav-item"><a href="/edu/" class="nav-link">Education</a></li>
-            <li class="nav-item"><a href="/contact/" class="nav-link">Contact</a></li>
-        </ul>
-    </nav>
-</div>
+
+<nav class="navbar">
+    <a href="#" class="logo">My Portfolio</a>
+    <ul class="nav-menu">
+        <li class="nav-item"><a href="/about/" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="/skills/" class="nav-link">Skills</a></li>
+        <li class="nav-item"><a href="/latest-work/" class="nav-link">Work</a></li>
+        <li class="nav-item"><a href="/edu/" class="nav-link">Education</a></li>
+        <li class="nav-item"><a href="/contact/" class="nav-link">Contact</a></li>
+    </ul>
+</nav>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+        
+        hamburger.addEventListener("click", mobileMenu);
+        
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        const navLink = document.querySelectorAll(".nav-link");
+        
+        navLink.forEach(n => n.addEventListener("click", closeMenu));
+        
+        function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+    });
+</script>

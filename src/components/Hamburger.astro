@@ -8,39 +8,45 @@
       position: fixed;
       top: 24px;
       right: 32px;
-      z-index: 1000; /* Ensure it's above other content */
     }
 
-    .line {
-      display: block;
-      width: 40px;
-      height: 5px;
-      margin-bottom: 10px;
-      background-color: #ff9776; /* Adjust color as needed */
-      transition: background-color 0.3s ease;
-    }
-
-    .hamburger.active .line:nth-child(2) {
+    .hamburger.active .bar:nth-child(2) {
       opacity: 0;
     }
 
-    .hamburger.active .line:nth-child(1) {
+    .hamburger.active .bar:nth-child(1) {
       transform: translateY(8px) rotate(45deg);
     }
 
-    .hamburger.active .line:nth-child(3) {
+    .hamburger.active .bar:nth-child(3) {
       transform: translateY(-8px) rotate(-45deg);
     }
 
+    .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      transition: 0.3s;
+      transition: all 0.3s ease-in-out;
+      background-color: #2D2D2D;
+    }
+
+
     @media only screen and (min-width: 870px) {
       .hamburger {
+        right: 32px;
         display: none;
+      }
+      
+      .hamburger {
+        right: 32px;
       }
     }
   </style>
 </head>
-<div class="hamburger" onclick="toggleMenu()">
-  <span class="line"></span>
-  <span class="line"></span>
-  <span class="line"></span>
+<div class="hamburger">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
 </div>
