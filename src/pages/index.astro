@@ -11,15 +11,15 @@ const hidePageTitle = true;
     <main class="sub-header">
         <section class="top-section">
           <h2>Hello, I'm</h2>
-          <figure class="hide-desktop">
+          <figure class="hide-desktop" aria-labelledby="sara bicudo text black, grey and lilac text illustration">
               <Fragment set:html={SaraBicudoDesktop}/>
           </figure>
-          <figure class="hide-mobile">
+          <figure class="hide-mobile" aria-labelledby="sara bicudo text black, grey and lilac text illustration">
               <Fragment set:html={SaraBicudoMobile}/>
           </figure>
           <h3>A Digital Designer based in Lisbon</h3>
         </section>
-        <figure class="illustration">
+        <figure class="illustration" aria-labelledby="lilac, green, yellow and pink shapes all mixed together">
           <Fragment set:html={Illustration}/>
         </figure>
         <p>Irreversibly passionate for bringing a human perspective into the digital world.</p>
