@@ -1,52 +1,60 @@
 ---
 ---
-<header>
-  <style>
-    .hamburger {
-      display: block;
-      cursor: pointer;
-      position: fixed;
-      top: 24px;
-      right: 32px;
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .bar {
-      display: block;
-      width: 25px;
-      height: 3px;
-      margin: 5px auto;
-      transition: 0.3s;
-      transition: all 0.3s ease-in-out;
-      background-color: #2D2D2D;
-    }
-
-
-    @media only screen and (min-width: 870px) {
-      .hamburger {
-        right: 32px;
-        display: none;
-      }
-      
-      .hamburger {
-        right: 32px;
-      }
-    }
-  </style>
-</head>
 <div class="hamburger">
   <span class="bar"></span>
   <span class="bar"></span>
   <span class="bar"></span>
 </div>
+
+<style>
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    top: 24px;
+    right: 32px;
+  }
+
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #2D2D2D;
+  }
+
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  @media only screen and (min-width: 870px) {
+    .hamburger {
+      right: 32px;
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", toggleMenu);
+
+    function toggleMenu() {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    }
+  });
+</script>

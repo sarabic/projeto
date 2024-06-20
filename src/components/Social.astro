@@ -1,21 +1,32 @@
 ---
+import LinkedinLogo from "/assets/svg/linkedin.svg?raw"
+import BehanceLogo from "/assets/svg/behance.svg?raw"
+import InstagramLogo from "/assets/svg/instagram.svg?raw"
+import EmailLogo from "/assets/svg/email.svg?raw"
 ---
-<head>
-  <style>
-    a {
-      padding: 20px 20px;
-      text-decoration: none;
-      border-radius: 20%;
-    }
-    a:hover {
-      background-color: #ddd;
-      border-radius: 20%;
-      color: #2D2D2D;
-    }
-  </style>
-</head>
 
-<a href="https://www.linkedin.com/sarabicudo" target="_blank"><img class="icons" src="/assets/svg/linkedin.svg" alt="black linkedin logo" /></a>
-<a href="https://www.behance.com/sarabicudo" target="_blank"><img class="icons" src="/assets/svg/behance.svg" alt="black behance logo" /></a> 
-<a href="https://www.instagram.com/sara_bicudo" target="_blank"><img class="icons" src="/assets/svg/instagram.svg" alt="black facebook logo" /></a>
-<a href="mailto:bicudo.sara@gmail.com" target="_blank"><img class="icons" src="/assets/svg/email.svg" alt="black mail logo" /></a>
+<a href="https://www.linkedin.com/sarabicudo" target="_blank"><Fragment set:html={LinkedinLogo}/></a>
+<a href="https://www.behance.com/sarabicudo" target="_blank"><Fragment set:html={BehanceLogo}/></a> 
+<a href="https://www.instagram.com/sara_bicudo" target="_blank"><Fragment set:html={InstagramLogo}/></a>
+<a href="mailto:bicudo.sara@gmail.com" target="_blank"><Fragment set:html={EmailLogo}/></a>
+
+<style>
+  a {
+    padding: 20px 20px;
+    text-decoration: none;
+    border-radius: 20%;
+  }
+  a:hover {
+    background-color: #ddd;
+    border-radius: 20%;
+    color: #2D2D2D;
+  }
+  .icons {
+    width: auto;
+    height: 25px;
+    padding-right: 12px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+</style>

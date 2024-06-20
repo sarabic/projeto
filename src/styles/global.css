@@ -1,9 +1,63 @@
+:root {
+  /* Fonts */
+  --font-primary: 'Epilogue', sans-serif;
+
+  /* Blueish Purple */
+  --blueish-purple-1: #EAEEFD;
+  --blueish-purple-2: #BAC7F7;
+  --blueish-purple-3: #758FF0;
+  --blueish-purple-4: #5A70C4;
+  --blueish-purple-5: #41559F;
+
+  /* Lilac */
+  --lilac-1: #F2EFFC;
+  --lilac-2: #D7CDF5;
+  --lilac-3: #BFAEF2;
+  --lilac-4: #A18AE5;
+  --lilac-5: #5D3DBC;
+
+  /* Pink */
+  --pink-1: #FFE9F5;
+  --pink-2: #FFC8E5;
+  --pink-3: #FFA4D3;
+  --pink-4: #E667A8;
+  --pink-5: #B52E73;
+
+  /* Red */
+  --red-1: #FCE3DD;
+  --red-2: #FABBAA;
+  --red-3: #F67755;
+  --red-4: #D15433;
+  --red-5: #D15433;
+
+  /* yellow */
+  --yellow-1: #FFF0D9;
+  --yellow-2: #FFD495;
+  --yellow-3: #FFAA2B;
+  --yellow-4: #F39F22;
+  --yellow-5: #C37E16;
+  
+  /* green */
+  --green-1: #D8F1EF;
+  --green-2: #80E3DF;
+  --green-3: #00C7BE;
+  --green-4: #13A6A0;
+  --green-5: #146965;
+
+  /* gret */
+  --white: rgba(255, 255, 255, 1);
+  --pale-grey: #f1f5f9;
+  --light-grey: #E0E0E0;
+  --grey: #999895;
+  --dark-grey: #2E333B;
+
+}
+
 /* Reset and basic styling */
 
 html {
-    background-color: #f1f5f9;
-    font-family: "Epilogue", sans-serif;
-    scroll-behavior: smooth;
+  background-color: var(--pale-grey);
+  scroll-behavior: smooth;
 }
   
 body {
@@ -14,7 +68,7 @@ body {
   line-height: 1.5;
   min-width: 320px;
   max-width: 90%;
-  font-family: "Epilogue", sans-serif;
+  font-family: var(--font-primary);
   color:#2D2D2D;
   text-align: left;
 }
@@ -91,7 +145,7 @@ figcaption {
 
 a {
   text-decoration: none;
-  color: #2D2D2D;
+  color: var(--dark-grey);
 }
 
 ul {
@@ -108,7 +162,7 @@ label {
   line-height: 5px;
   margin: 0;
   font-weight: 200;
-  color: #2D2D2D;
+  color: var(--dark-grey);
   text-align: left;
 }
 
