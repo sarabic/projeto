@@ -1,40 +1,6 @@
 ---
 import Social from './Social.astro';
 ---
-<head>
-  <style>
-      footer {
-        display: flex;
-        gap: 1rem;
-        margin-top: 2rem;
-      }
-      #contact {
-        padding-bottom: 15px;
-      }
-
-      .footer-bottom {
-        display: block;
-        flex-direction: column;
-        justify-content: left;
-        padding: 10px 0;
-        border-top: 1px solid rgba(0, 0, 0, 0.2); /* Adjust the border style and color */
-        text-align: center;
-      }
-
-      .footer-bottom p {
-        font-size: 0.7rem;
-      }
-
-      @media only screen and (min-width: 870px) {
-        .footer-bottom {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            text-align: left;
-        }
-      }
-  </style>
-</head>
 
 <footer>
     <div class="footer-bottom">
@@ -43,3 +9,36 @@ import Social from './Social.astro';
   </div>
   <Social />
 </footer>
+
+<style>
+  footer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  #contact {
+    padding-bottom: 15px;
+  }
+
+  .footer-bottom {
+    display: block;
+    flex-direction: column;
+    justify-content: left;
+    padding: 10px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.2); /* Adjust the border style and color */
+    text-align: center;
+  }
+
+  .footer-bottom p {
+    font-size: 0.7rem;
+  }
+
+  @media only screen and (min-width: 870px) {
+    .footer-bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+  }
+</style>

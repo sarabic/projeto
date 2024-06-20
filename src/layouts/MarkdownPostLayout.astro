@@ -6,6 +6,36 @@ const { frontmatter } = Astro.props;
     <p>{frontmatter.pubDate.toString().slice(0,10)}</p>
     <p><em>{frontmatter.description}</em></p>
     <p>Written by: {frontmatter.author}</p>
-    <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+    <ul class="tag-container">
+        {frontmatter.tags.map(tag => (
+            <li class="tag">
+                <p class="line">{tag.line1}</p>
+                <p class="line">{tag.line2}</p>
+            </li>
+        ))}
+    </ul>
     <slot />
 </BaseLayout>
+
+<style>
+    .tag-container {
+        display: flex;
+        gap: 10px;
+        padding: 0;
+        list-style: none;
+        flex-wrap: wrap; /* Allow tags to wrap to the next line */
+    }
+
+    .tag {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        width: 100px; /* Set a fixed width for consistent size */
+    }
+
+    .line {
+        margin: 0;
+    }
+</style>

@@ -7,7 +7,11 @@ author: "Astro Learner"
 image:
     url: "/assets/img/vision.png"
     alt: "Thumbnail of Astro rays."
-tags: ["astro", "learning in public", "setbacks", "community"]
+tags: [
+    { line1: "Team", line2: "3 Members" },
+    { line1: "Deadline", line2: "5 Weeks" },
+    { line1: "Tool", line2: "Figma" },
+]
 ---
 It wasn't always smooth sailing, but I'm enjoying building with Astro. And, the [Discord community](https://astro.build/chat) is really friendly and helpful!
 

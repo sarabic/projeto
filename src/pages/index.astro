@@ -4,16 +4,92 @@ import SaraBicudoMobile from "/assets/svg/sara_bicudo_thin.svg?raw"
 import SaraBicudoDesktop from "/assets/svg/sara_bicudo_wide.svg?raw"
 import Illustration from "/assets/svg/illustration.svg?raw"
 const pageTitle = "Home Page";
+const hidePageTitle = true;
 ---
 
-<BaseLayout>
-    <main>
-      <section class="sub-header">
-        <h1><span>Hello, I'm</span></h1>
-        <Fragment set:html={SaraBicudoDesktop}/>
-        <Fragment set:html={SaraBicudoMobile}/>
-        <h1><span>A Digital Designer based in Lisbon</span></h1>
-        <Fragment set:html={Illustration}/>
-    </section>
+<BaseLayout pageTitle={pageTitle} hidePageTitle={hidePageTitle}>
+    <main class="sub-header">
+        <section class="top-section">
+          <h2>Hello, I'm</h2>
+          <figure class="hide-desktop">
+              <Fragment set:html={SaraBicudoDesktop}/>
+          </figure>
+          <figure class="hide-mobile">
+              <Fragment set:html={SaraBicudoMobile}/>
+          </figure>
+          <h3>A Digital Designer based in Lisbon</h3>
+        </section>
+        <figure class="illustration">
+          <Fragment set:html={Illustration}/>
+        </figure>
+        <p>Irreversibly passionate for bringing a human perspective into the digital world.</p>
     </main>
+    <style>
+      h2 {
+        text-align: left;
+        margin: 0 0 8px 0;
+      }
+
+      h3 {
+        text-align: left;
+        margin: 40px 0 40px 0;
+      }
+
+      p {
+        margin-top: 40px;
+        text-align: center;
+      }
+      
+      .illustration {
+        display: block;
+        max-width: 100%;
+        width: 60%;
+        height: auto;
+        margin: 0 auto;
+      }
+
+      .top-section {
+        margin: 0 auto;
+        width: 80%
+      }
+
+      .sub-header {
+        padding: 120px 0 100px 0;
+      }
+
+      @media (max-width: 870px) {
+        .hide-desktop {
+            display: none;
+        }
+        .hide-mobile {
+          display: block;
+          margin: 0;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          height: auto;
+        }
+      }
+    
+      @media (min-width: 871px) {
+        .hide-mobile {
+          display: none;
+        }
+        .hide-desktop {
+          display: block;
+          margin-top: 40px;
+          margin-bottom: 40px;
+          height: auto;
+          margin: 0 auto;
+        }
+
+        .illustration {
+          top: 40px;
+          margin-bottom: 40px;
+        }
+        .top-section h2,
+        .top-section h3 {
+          text-align: center;
+        }
+      }
+    </style>
 </BaseLayout>

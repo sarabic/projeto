@@ -7,22 +7,18 @@ author: "Inês Mesquisa, Margarida Pereira and Sara Bicudo"
 image:
     url: "/assets/img/fresco.png"
     alt: "The full Astro logo."
-tags: ["astro", "blogging", "learning in public"]
+tags: [
+    { line1: "Team", line2: "3 Members" },
+    { line1: "Deadline", line2: "4 Weeks" },
+    { line1: "Tool", line2: "Figma" },
+]
 ---
 
-Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
+## Context
 
-## Problem
+1. **Problem**: First, I created a new Astro project and set up my online accounts.
 
-1. **Installing Astro**: First, I created a new Astro project and set up my online accounts.
-
-2. **Making Pages**: I then learned how to make pages by creating new `.astro` files and placing them in the `src/pages/` folder.
-
-3. **Making Blog Posts**: This is my first blog post! I now have Astro pages and Markdown posts!
-
-## Challenge
-
-I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+2. **Challenge**: I then learned how to make pages by creating new `.astro` files and placing them in the `src/pages/` folder.
 
 ## Our Solution
 

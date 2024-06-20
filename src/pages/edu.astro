@@ -3,40 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "My Education";
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <head>
-        <style>
-            .edu {
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 0;
-            }
-
-            .edu-content {
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 0;
-            }
-
-            .edu-container {
-            width: 320px;
-            display: flex;
-            flex-direction: row;
-            padding: 8px;
-            }
-
-            .edu-img {
-            width: 20%;
-            height: auto;
-            padding-right: 24px;
-            }
-        </style>
-    </head>
     <p>This is where I will put my education.</p>
     <main>
         <h2>Education</h2>
@@ -83,4 +49,36 @@ const pageTitle = "My Education";
             </li>
         </ul>
     </main>
+    <style>
+        .edu {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+        }
+    
+        .edu-content {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+        }
+    
+        .edu-container {
+        width: 320px;
+        display: flex;
+        flex-direction: row;
+        padding: 8px;
+        }
+    
+        .edu-img {
+        width: 20%;
+        height: auto;
+        padding-right: 24px;
+        }
+    </style>
 </BaseLayout>

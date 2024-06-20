@@ -77,8 +77,10 @@ figure {
   overflow: hidden;
 }
 
-figure img {
+figure img,
+figure svg {
   width: 100%;
+  height: auto;
 }
 
 figcaption {
@@ -124,26 +126,6 @@ label {
 
 .container {
   margin: 0 auto;
-}
-
-/* Sub-header styling */
-
-.sub-header {
-  margin: 0;
-  padding: 70px 0 100px 0; /* Adjust the margin for mobile */
-  text-align: center;
-}
-
-.sub-header h1 {
-  margin: 0;
-  line-height: 1; /* Add this line to set the line height to 1 */
-}
-
-.sub-header h1 span {
-  display: block; /* Add this line to make the span a block-level element */
-  font-size: 1.5rem;
-  line-height: 3.5;
-  margin: 0;
 }
 
 .text {
@@ -196,15 +178,6 @@ label {
     font-size: 1rem;
     line-height: 28px;
     margin: 0;
-  }
-  
-  .sub-header {
-    padding-top: 190px;
-    text-align: left;
-  }
-
-  .sub-header h3 {
-    text-align: left;
   }
   
   .text {
