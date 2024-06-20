@@ -5,7 +5,9 @@ const pageTitle = "Latest Work";
 ---
 <BaseLayout pageTitle={pageTitle}>
     <main>
-        <p>This is where I will post about my journey learning Astro.</p>
+        <div class="tag-container">
+            <a href="https://www.linkedin.com/sarabicudo" class="tag" target="_blank">Access Portfolio</a>
+        </div>
         <ul>
             {allPosts.map((post) => <li><a href={post.url}><img class="work-img" src={post.frontmatter.image.url}>{post.frontmatter.title}{post.frontmatter.description}</a></li>)}
         </ul>

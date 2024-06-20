@@ -17,12 +17,12 @@ const hidePageTitle = true;
           <figure class="hide-mobile" aria-labelledby="sara bicudo text black, grey and lilac text illustration">
               <Fragment set:html={SaraBicudoMobile}/>
           </figure>
-          <h3>A Digital Designer based in Lisbon</h3>
+          <h3 style="font-weight:300">A Digital Designer based in Lisbon</h3>
         </section>
         <figure class="illustration" aria-labelledby="lilac, green, yellow and pink shapes all mixed together">
           <Fragment set:html={Illustration}/>
         </figure>
-        <p>Irreversibly passionate for bringing a human perspective into the digital world.</p>
+        <p>Irreversibly <strong style="color: var(--pink-5)">passionate</strong> for bringing <br> a <strong style="color: var(--yellow-5)">human</strong> perspective into the <strong style="color: var(--lilac-5)">digital</strong> <strong style="color: var(--green-5)">world</strong>.</p>
     </main>
     <style>
       h2 {
@@ -54,7 +54,7 @@ const hidePageTitle = true;
       }
 
       .sub-header {
-        padding: 120px 0 100px 0;
+        padding: 120px 0 40px 0;
       }
 
       @media (max-width: 870px) {

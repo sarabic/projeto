@@ -11,6 +11,7 @@
 
   /* Lilac */
   --lilac-1: #F2EFFC;
+  --lilac-1-2: #e8e4f3;
   --lilac-2: #D7CDF5;
   --lilac-3: #BFAEF2;
   --lilac-4: #A18AE5;
@@ -46,7 +47,6 @@
 
   /* gret */
   --white: rgba(255, 255, 255, 1);
-  --pale-grey: #f1f5f9;
   --light-grey: #E0E0E0;
   --grey: #999895;
   --dark-grey: #2E333B;
@@ -56,7 +56,7 @@
 /* Reset and basic styling */
 
 html {
-  background-color: var(--pale-grey);
+  background-color: var(--white);
   scroll-behavior: smooth;
 }
   
@@ -69,7 +69,7 @@ body {
   min-width: 320px;
   max-width: 90%;
   font-family: var(--font-primary);
-  color:#2D2D2D;
+  color: var(--dark-grey);
   text-align: left;
 }
 
@@ -87,7 +87,7 @@ main {
 
 h2 {
   font-size: 1.75rem;
-  font-weight: 700;
+  font-weight: 300;
   text-align: center;
   position: relative;
   padding-bottom: 24px;
@@ -96,6 +96,7 @@ h2 {
 
 h3 {
   font-size: 0.95rem;
+  font-weight: 400;
   margin: 0;
   text-align: left;
 }
@@ -120,7 +121,7 @@ img {
 }
 
 strong {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /* Figure and image styling */
@@ -145,7 +146,7 @@ figcaption {
 
 a {
   text-decoration: none;
-  color: var(--dark-grey);
+  color: var(--lilac-5);
 }
 
 ul {
@@ -167,6 +168,27 @@ label {
 }
 
 /* Specific sections */
+
+.tag {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--lilac-1);
+  color: var(--lilac-5);
+  border-radius: 8px;
+  margin: 0 auto;
+  width: auto;
+}
+
+.tag:hover {
+  background-color: var(--lilac-1-2);
+  color: var(--lilac-5);
+}
+
+.tag-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
 
 .sections {
   padding: 70px 0;
@@ -206,14 +228,13 @@ label {
   }
   
   h1 {
-    font-size: 5rem;
+    font-size: 3rem;
     margin: 20px 0 20px 0;
   }
   
   h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 20px 0;
-    transform: none;
   }
   
   h3 {

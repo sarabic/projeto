@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "My Story";
+---
+<BaseLayout pageTitle={pageTitle}>
+    <div class="tag-container">
+        <a href="https://www.linkedin.com/sarabicudo" class="tag" target="_blank">Download Resume</a>
+    </div>
+    <div class="content-wrapper">
+        <main>
+            <h2>My Education</h2>
+            <ul class="edu">
+                <li class="edu-container">
+                    <figure class="edu-img">
+                        <img src="/assets/svg/education-card-icon.svg" alt="Faculdade de Belas-Artes' Logo in Yellow" />
+                    </figure>
+                    <div class="edu-text">
+                        <h3>Digital Experience Design</h3>
+                        <h4>PG Course 2023/2024</h4>
+                        <p>Faculdade de Belas-Artes da UL</p>
+                    </div>
+                </li>
+                <li class="edu-container">
+                    <figure class="edu-img">
+                        <img src="/assets/svg/education-card-icon-1.svg" alt="Lisbon School of Design's Logo in Lilac" />
+                    </figure>
+                    <div class="edu-text">
+                        <h3>UX/UI Design</h3>
+                        <h4>Course 2023</h4>
+                        <p>Lisbon School of Design</p>
+                    </div>
+                </li>
+                <li class="edu-container">
+                    <figure class="edu-img">
+                        <img src="/assets/svg/education-card-icon-2.svg" alt="Universidade Católica Portuguesa's Logo in Green" />
+                    </figure>
+                    <div class="edu-text">
+                        <h3>Media Studies</h3>
+                        <h4>Bachelors' Degree 2020/2023</h4>
+                        <p>Faculty of Human Sciences of UCP</p>
+                    </div>
+                </li>
+                <li class="edu-container">
+                    <figure class="edu-img">
+                        <img src="/assets/svg/education-card-icon-3.svg" alt="Università La Sapienza's Logo in Red" />
+                    </figure>
+                    <div class="edu-text">
+                        <h3>Corporate Communication</h3>
+                        <h4>Erasmus Studies 2022</h4>
+                        <p>La Sapienza Università di Roma</p>
+                    </div>
+                </li>
+            </ul>
+        </main>
+
+        <aside>
+            <h2>My Skills</h2>
+            <ul style="color: var(--grey)">
+                <li><p>Wireframing</p></li>
+                <li><p>Prototyping</p></li>
+                <li><p>Animating</p></li>
+                <li><p>HTML</p></li>
+                <li><p>CSS</p></li>
+                <li><p>Photoshop</p></li>
+                <li><p>Illustrator</p></li>
+                <li><p>Human Resources</p></li>
+                <li><p>Portuguese</p></li>
+                <li><p>French</p></li>
+                <li><p>English</p></li>
+                <li><p>Italian</p></li>
+            </ul>
+        </aside>
+    </div>
+
+    <style>
+        body {
+            max-width: 90%;
+        }
+
+        ul {
+            padding: 0;
+        }
+        main {
+            width: 100%;
+        }
+    
+        aside {
+            min-width: 120px;
+            max-width: 180px;
+        }
+
+        h2 {
+            text-align: left;
+        }
+
+        figure {
+            width: 50%;
+        }
+        
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 4fr 1fr;
+            gap: 20px;
+            padding: 0px;
+        }
+
+        .tag-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0; /* Add some margin for spacing */
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--lilac-1);
+            color: var(--lilac-5); /* Text color */
+            border-radius: 8px;
+            text-align: center;
+            width: auto;
+        }
+
+        .edu {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Image column and text column */
+            gap: 24px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .edu-img {
+            width: 100px; /* Adjust image width */
+        }
+
+        .edu-text {
+            padding-left: 10px; /* Add spacing between image and text */
+        }
+
+        .edu-text h3 {
+            margin-top: 0; /* Remove default margin */
+        }
+
+        .edu-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-width: 100%;
+        }
+
+        @media only screen and (min-width: 870px) {
+            .edu-container {
+            display: grid;
+            grid-template-columns: auto 1fr; /* Image column and text column */
+            gap: 10px; /* Adjust gap between image and text */
+            align-items: center; /* Center items vertically */
+            }
+            
+            .edu {
+            gap: 64px 24px;
+
+            }  
+        }
+    </style>
+</BaseLayout>
