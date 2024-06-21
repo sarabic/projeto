@@ -2,22 +2,24 @@
 import Hamburger from './Hamburger.astro';
 import Navigation from './Navigation.astro';
 ---
+<Fragment slot="head">
+  <style>
+    .navigation {
+      height: 72px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+  </style>
+</Fragment>
 <header>
   <nav class="navigation">
     <Hamburger />
     <Navigation />
   </nav>
 </header>
-<style>
-  .navigation {
-    height: 72px;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 2;
-  }
-</style>

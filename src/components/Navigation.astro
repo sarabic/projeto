@@ -1,7 +1,7 @@
 ---
 import Logo from "/public/assets/svg/logo.svg?raw"
 ---
-<header>
+<Fragment slot="head">
     <style>
         .navbar {
         display: flex;
@@ -131,7 +131,29 @@ import Logo from "/public/assets/svg/logo.svg?raw"
             }
         }
     </style>
-</header>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
+            
+            hamburger.addEventListener("click", mobileMenu);
+            
+            function mobileMenu() {
+                hamburger.classList.toggle("active");
+                navMenu.classList.toggle("active");
+            }
+    
+            const navLink = document.querySelectorAll(".nav-link");
+            
+            navLink.forEach(n => n.addEventListener("click", closeMenu));
+            
+            function closeMenu() {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            }
+        });
+    </script>
+</Fragment>
 
 <nav class="navbar">
     <a href="/" class="logo">
@@ -154,26 +176,3 @@ import Logo from "/public/assets/svg/logo.svg?raw"
         <li class="nav-item"><a href="/contact/" class="nav-link">Contact</a></li>
     </ul>
 </nav>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const hamburger = document.querySelector(".hamburger");
-        const navMenu = document.querySelector(".nav-menu");
-        
-        hamburger.addEventListener("click", mobileMenu);
-        
-        function mobileMenu() {
-            hamburger.classList.toggle("active");
-            navMenu.classList.toggle("active");
-        }
-
-        const navLink = document.querySelectorAll(".nav-link");
-        
-        navLink.forEach(n => n.addEventListener("click", closeMenu));
-        
-        function closeMenu() {
-            hamburger.classList.remove("active");
-            navMenu.classList.remove("active");
-        }
-    });
-</script>

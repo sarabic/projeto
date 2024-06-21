@@ -3,6 +3,61 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "About Me";
 ---
 <BaseLayout pageTitle={pageTitle}>
+    <Fragment slot="head">
+        <style>
+            .sara {
+                position: relative;
+                left: 50%; /* Move to the horizontal center */
+                transform: translateX(-50%); /* Adjust to center the element */
+                width: 90%; /* Adjust the size for mobile */
+                height: auto;
+            }
+        
+            .about-me h3 {
+                font-weight: 500;
+            }
+    
+            .about-me h2 {
+                text-align: center;
+                padding: 0;
+                margin: 4px 0;
+                font-size: 1.1rem;
+                font-weight: 500;
+            }
+            
+            @media only screen and (min-width: 550px) {
+        
+                .sara,
+                .text {
+                    width: 70%;
+                }
+                }
+        
+            @media only screen and (min-width: 870px) {
+        
+                .sara {
+                    width: 90%;
+                    transform: none;
+                    left: 0;
+                }
+        
+                .text {
+                width: 50%;
+                transform: none;
+                }
+        
+                .about-me {
+                    display: flex;
+                    justify-content: flex-start;
+                }
+        
+                .about-me h2 {
+                    text-align: left;
+                    margin: 0;
+                }
+            }
+        </style>
+    </Fragment>
     <main>
         <div class="tag-container">
             <a href="https://www.linkedin.com/sarabicudo" class="tag" target="_blank">Download Resume</a>
@@ -26,57 +81,4 @@ const pageTitle = "About Me";
           </div>
       </div>
     </main>
-    <style>
-        .sara {
-            position: relative;
-            left: 50%; /* Move to the horizontal center */
-            transform: translateX(-50%); /* Adjust to center the element */
-            width: 90%; /* Adjust the size for mobile */
-            height: auto;
-        }
-    
-        .about-me h3 {
-            font-weight: 500;
-        }
-
-        .about-me h2 {
-            text-align: center;
-            padding: 0;
-            margin: 4px 0;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-        
-        @media only screen and (min-width: 550px) {
-    
-            .sara,
-            .text {
-                width: 70%;
-            }
-            }
-    
-        @media only screen and (min-width: 870px) {
-    
-            .sara {
-                width: 90%;
-                transform: none;
-                left: 0;
-            }
-    
-            .text {
-            width: 50%;
-            transform: none;
-            }
-    
-            .about-me {
-                display: flex;
-                justify-content: flex-start;
-            }
-    
-            .about-me h2 {
-                text-align: left;
-                margin: 0;
-            }
-        }
-    </style>
 </BaseLayout>

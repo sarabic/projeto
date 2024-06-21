@@ -4,6 +4,58 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 const pageTitle = "Latest Work";
 ---
 <BaseLayout pageTitle={pageTitle}>
+    <Fragment slot="head">
+        <style>
+            h2 {
+                text-align: left;
+                margin: 0;
+                padding: 0;
+            }
+    
+            .work-content {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 0;
+            }
+    
+            .work-container {
+                width: 220px;
+                height: auto;
+                flex-wrap: wrap;
+                padding: 4px;
+                overflow: visible;
+            }
+    
+            .work-container p {
+                text-align: left;
+            }
+    
+            .work-img {
+                width: 100%;
+                height: auto;
+                box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.05);
+                border-radius: 20px;
+                margin-bottom: 10px;
+            }
+    
+            @media only screen and (min-width: 870px) {
+                .work-content {
+                    gap: 20px 100px;
+                }
+    
+                .work-img {
+                    width: 100%;
+                }
+    
+                .work-container {
+                    width: 270px;
+                }
+            }
+        </style>
+    </Fragment>
     <main>
         <div class="tag-container">
             <a href="https://www.linkedin.com/sarabicudo" class="tag" target="_blank">Access Portfolio</a>
@@ -43,54 +95,4 @@ const pageTitle = "Latest Work";
             </li>
         </ul>
     </main>
-    <style>
-        h2 {
-            text-align: left;
-            margin: 0;
-            padding: 0;
-        }
-
-        .work-content {
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 0;
-        }
-
-        .work-container {
-            width: 220px;
-            height: auto;
-            flex-wrap: wrap;
-            padding: 4px;
-            overflow: visible;
-        }
-
-        .work-container p {
-            text-align: left;
-        }
-
-        .work-img {
-            width: 100%;
-            height: auto;
-            box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.05);
-            border-radius: 20px;
-            margin-bottom: 10px;
-        }
-
-        @media only screen and (min-width: 870px) {
-            .work-content {
-                gap: 20px 100px;
-            }
-
-            .work-img {
-                width: 100%;
-            }
-
-            .work-container {
-                width: 270px;
-            }
-        }
-    </style>
 </BaseLayout>

@@ -11,6 +11,7 @@ const {pageTitle, hidePageTitle} = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <slot name="head"></slot>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
       h1 {

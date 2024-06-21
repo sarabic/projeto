@@ -5,28 +5,29 @@ import InstagramLogo from "/assets/svg/instagram.svg?raw"
 import EmailLogo from "/assets/svg/email.svg?raw"
 ---
 
+<Fragment slot="head">
+  <style>
+    a {
+      padding: 20px 20px;
+      text-decoration: none;
+      border-radius: 20%;
+    }
+    a:hover {
+      background-color: #ddd;
+      border-radius: 20%;
+      color: #2D2D2D;
+    }
+    .icons {
+      width: auto;
+      height: 25px;
+      padding-right: 12px;
+      text-align: center;
+      margin: 0 auto;
+    }
+  </style>
+</Fragment>
+
 <a href="https://www.linkedin.com/sarabicudo" target="_blank" aria-labelledby="black linkedin logo"><Fragment set:html={LinkedinLogo}/></a>
 <a href="https://www.behance.com/sarabicudo" target="_blank" aria-labelledby="black behance logo"><Fragment set:html={BehanceLogo}/></a> 
 <a href="https://www.instagram.com/sara_bicudo" target="_blank" aria-labelledby="black instagram logo"><Fragment set:html={InstagramLogo}/></a>
 <a href="mailto:bicudo.sara@gmail.com" target="_blank" aria-labelledby="black email logo"><Fragment set:html={EmailLogo}/></a>
-
-<style>
-  a {
-    padding: 20px 20px;
-    text-decoration: none;
-    border-radius: 20%;
-  }
-  a:hover {
-    background-color: #ddd;
-    border-radius: 20%;
-    color: #2D2D2D;
-  }
-  .icons {
-    width: auto;
-    height: 25px;
-    padding-right: 12px;
-    text-align: center;
-    margin: 0 auto;
-  }
-
-</style>
