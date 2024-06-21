@@ -7,14 +7,14 @@ const {pageTitle, hidePageTitle} = Astro.props;
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/assets/svg/logo.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
       h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         font-weight: 600;
         margin-top: 6rem;
         text-align: center;
@@ -24,6 +24,12 @@ const {pageTitle, hidePageTitle} = Astro.props;
 
       .hidden {
         display: none;
+      }
+
+      @media only screen and (min-width: 870px) {
+        h1 {
+          font-size: 2.5rem;
+        }
       }
     </style>
   </head>
