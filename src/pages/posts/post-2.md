@@ -2,7 +2,7 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: "Safe Plate"
 pubDate: 2022-07-08
-description: "Food Restriction Management"
+description: "Restriction Management"
 subdescription: "FBAUL"
 author: "Sara Bicudo"
 image:
