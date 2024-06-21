@@ -1,6 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "My Story";
+import Icon1 from "/assets/svg/education-card-icon.svg?raw"
+import Icon2 from "/assets/svg/education-card-icon-1.svg?raw"
+import Icon3 from "/assets/svg/education-card-icon-2.svg?raw"
+import Icon4 from "/assets/svg/education-card-icon-3.svg?raw"
+
 ---
 <BaseLayout pageTitle={pageTitle}>
     <Fragment slot="head">
@@ -8,7 +13,11 @@ const pageTitle = "My Story";
             body {
                 max-width: 90%;
             }
-    
+
+            h2 {
+                text-align: left;
+            }
+
             p {
                 color: var(--grey);
             }
@@ -16,6 +25,7 @@ const pageTitle = "My Story";
             ul {
                 padding: 0;
             }
+            
             main {
                 width: 100%;
                 margin-bottom: 2rem;
@@ -25,10 +35,6 @@ const pageTitle = "My Story";
                 min-width: 120px;
                 max-width: 180px;
                 margin-bottom: 2rem;
-            }
-    
-            h2 {
-                text-align: left;
             }
     
             figure {
@@ -93,7 +99,7 @@ const pageTitle = "My Story";
             <ul class="edu">
                 <li class="edu-container">
                     <figure class="edu-img">
-                        <img src="/assets/svg/education-card-icon.svg" alt="Faculdade de Belas-Artes' Logo in Yellow" />
+                        <Fragment set:html={Icon1}/>
                     </figure>
                     <div class="edu-text">
                         <h3>Digital Experience Design</h3>
@@ -103,7 +109,7 @@ const pageTitle = "My Story";
                 </li>
                 <li class="edu-container">
                     <figure class="edu-img">
-                        <img src="/assets/svg/education-card-icon-1.svg" alt="Lisbon School of Design's Logo in Lilac" />
+                        <Fragment set:html={Icon2}/>
                     </figure>
                     <div class="edu-text">
                         <h3>UX/UI Design</h3>
@@ -113,7 +119,7 @@ const pageTitle = "My Story";
                 </li>
                 <li class="edu-container">
                     <figure class="edu-img">
-                        <img src="/assets/svg/education-card-icon-2.svg" alt="Universidade Católica Portuguesa's Logo in Green" />
+                        <Fragment set:html={Icon3}/>
                     </figure>
                     <div class="edu-text">
                         <h3>Media Studies</h3>
@@ -123,7 +129,7 @@ const pageTitle = "My Story";
                 </li>
                 <li class="edu-container">
                     <figure class="edu-img">
-                        <img src="/assets/svg/education-card-icon-3.svg" alt="Università La Sapienza's Logo in Red" />
+                        <Fragment set:html={Icon4}/>
                     </figure>
                     <div class="edu-text">
                         <h3>Corporate Communication</h3>

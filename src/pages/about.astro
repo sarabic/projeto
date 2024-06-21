@@ -5,6 +5,10 @@ const pageTitle = "About Me";
 <BaseLayout pageTitle={pageTitle}>
     <Fragment slot="head">
         <style>
+            main {
+                margin-bottom: 2rem;
+            }
+            
             .sara {
                 position: relative;
                 left: 50%; /* Move to the horizontal center */
@@ -23,10 +27,6 @@ const pageTitle = "About Me";
                 margin: 4px 0;
                 font-size: 1.1rem;
                 font-weight: 500;
-            }
-
-            main {
-                margin-bottom: 2rem;
             }
             
             @media only screen and (min-width: 550px) {

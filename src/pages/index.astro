@@ -10,31 +10,22 @@ const hidePageTitle = true;
   <Fragment slot="head">
     <style>
       h2 {
-        text-align: left;
         margin: 0 0 8px 0;
-      }
-  
-      .intro h3 {
-        margin: 40px 0 40px 0;
         display: flex;
         justify-content: left;
       }
-  
+
       p {
         margin-top: 40px;
         text-align: center;
       }
-      
+
       .illustration {
         display: block;
         display: flex;
         justify-content: center;
       }
 
-      .illustration svg {
-        width: 400px;
-      }
-  
       .intro {
         margin: 0 auto;
         width: 80%
@@ -44,14 +35,15 @@ const hidePageTitle = true;
         padding: 120px 0 40px 0;
         margin: 0 auto;
       }
-  
-      .name p {
-        display: none;
-      }
 
       .animated-title {
         padding: 0 8px;
         font-weight: 500;
+      }
+
+      .animated-title span:before {
+        content: 'Digital Designer';
+        animation: word-switch 3s infinite;
       }
 
       #rotating-star {
@@ -68,6 +60,20 @@ const hidePageTitle = true;
           animation: sparkle 2s ease-in-out infinite;
       }
 
+      .illustration svg {
+        width: 400px;
+      }
+
+      .intro h3 {
+        margin: 40px 0 40px 0;
+        display: flex;
+        justify-content: left;
+      }
+  
+      .name p {
+        display: none;
+      }
+
       @keyframes rotate {
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
@@ -81,11 +87,6 @@ const hidePageTitle = true;
           60% { opacity: 0.5; }
           80% { opacity: 0.8; }
           100% { opacity: 1; }
-      }
-
-      .animated-title span:before {
-        content: 'Digital Designer';
-        animation: word-switch 3s infinite;
       }
 
       @keyframes word-switch {
@@ -134,15 +135,15 @@ const hidePageTitle = true;
   <main class="sub-header">
     <section class="intro">
       <h2>Hello, I'm</h2>
-      <figure class="hide-desktop" aria-labelledby="sara bicudo text black, grey and lilac text illustration">
+      <figure class="hide-desktop">
           <Fragment set:html={SaraBicudoDesktop}/>
       </figure>
-      <figure class="hide-mobile" aria-labelledby="sara bicudo text black, grey and lilac text illustration">
+      <figure class="hide-mobile">
           <Fragment set:html={SaraBicudoMobile}/>
       </figure>
       <h3 style="font-weight:300">A <span class="animated-title"><span></span></span> based in Lisbon</h3>
     </section>
-    <figure class="illustration" aria-labelledby="lilac, green, yellow and pink shapes all mixed together">
+    <figure class="illustration">
       <svg aria-label="pink, lilac, green and yellow geometric shapes all mixed together" width="482" height="400" viewBox="0 0 482 400" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="319.5" cy="237.5" r="162.5" fill="#FFE6BF"/>
         <path id=rotating-star d="M319.205 103L344.527 171.426L408.383 135.202L383.801 203.897L456 217.197L393.017 254.019L439.776 310.62L367.862 298.338L367.303 371.756L320.107 316.118L272.49 372L272.097 299.039L199.704 311.237L246.296 255.092L183 217.899L254.778 204.842L230.195 135.66L293.572 171.8L319.205 103Z" fill="#FFA4D3"/>
