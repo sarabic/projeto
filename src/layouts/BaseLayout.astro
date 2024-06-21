@@ -18,6 +18,7 @@ const {pageTitle, hidePageTitle} = Astro.props;
         font-size: 2rem;
         font-weight: 600;
         margin-top: 6rem;
+        margin-bottom: 0;
         text-align: center;
         position: relative;
         padding: 0;
@@ -37,7 +38,9 @@ const {pageTitle, hidePageTitle} = Astro.props;
   <body class="container">
     <Header />
     <h1 class={hidePageTitle ? 'hidden' : ''}>{pageTitle}</h1>
-    <slot />
+    <ul>
+      <slot />
+    </ul>
     <Footer />
     <script>
       import "../scripts/menu.js";

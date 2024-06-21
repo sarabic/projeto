@@ -6,92 +6,183 @@ const pageTitle = "Latest Work";
 <BaseLayout pageTitle={pageTitle}>
     <Fragment slot="head">
         <style>
-            h2 {
-                text-align: left;
-                margin: 0;
-                padding: 0;
-            }
-    
-            .work-content {
-                display: flex;
-                flex-direction: row;
-                gap: 10px;
-                flex-wrap: wrap;
-                justify-content: center;
-                padding: 0;
-            }
-    
-            .work-container {
-                width: 220px;
-                height: auto;
-                flex-wrap: wrap;
-                padding: 4px;
-                overflow: visible;
-            }
-    
-            .work-container p {
-                text-align: left;
-            }
-    
+        h2 {
+            text-align: left;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            max-width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .post-list {
+            list-style-type: none; /* Remove default list styling */
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Create a grid with exactly 2 columns */
+            gap: 0; /* Space between grid items */
+            margin: 0;
+        }
+
+        .post-item {
+            position: relative;
+            overflow: hidden; /* Ensure content fits within the border */
+        }
+
+        .post-link {
+            text-decoration: none; /* Remove underline from links */
+            color: inherit; /* Inherit text color */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .work-img {
+            width: 100%; /* Make image take full width of container */
+            aspect-ratio: 640 / 705;
+            object-fit: cover; /* Ensure the image covers the container while maintaining aspect ratio */
+            transition: all .5s;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 30%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--dark-grey);
+            transition: all 0.5s;
+            background-color: rgba(255, 255, 255, 0.7);
+            transform: translateY(100%);
+        }
+
+        .caption h2 {
+            margin: 0;
+        }
+
+        .caption p {
+            font-size: 18px;
+            text-transform: capitalize;
+        }
+
+        .work-img:hover {
+            cursor: url('/public/assets/svg/cursor-hover.svg') 8 8, auto;
+        }
+
+        .post-item:hover .caption {
+            transform: translateY(0);
+            cursor: url('/public/assets/svg/cursor-hover.svg') 8 8, auto;
+        }
+
+        .post-content {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .post-title {
+            font-size: 1rem;
+            font-weight: 400;
+            margin: 10px 0;
+        }
+
+        .post-description {
+            font-size: 0.9em;
+            color: var(--dark-grey); /* Set a lighter color for the description */
+        }
+
+        .post-subdescription {
+            font-size: 0.7em;
+            color: var(--dark-grey); /* Set a lighter color for the description */
+        }
+
+        .color-variant-0 {
+            background-color: var(--yellow-2);
+        }
+
+        .color-variant-1 {
+            background-color: var(--lilac-2);
+        }
+
+        .color-variant-2 {
+            background-color: var(--green-2);
+        }
+
+        .color-variant-3 {
+            background-color: var(--red-2);
+        }
+
+        footer {
+            margin-top: 0;
+        }
+
+        @media only screen and (min-width: 870px) {
             .work-img {
                 width: 100%;
-                height: auto;
-                box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.05);
-                border-radius: 20px;
-                margin-bottom: 10px;
             }
-    
-            @media only screen and (min-width: 870px) {
-                .work-content {
-                    gap: 20px 100px;
-                }
-    
-                .work-img {
-                    width: 100%;
-                }
-    
-                .work-container {
-                    width: 270px;
-                }
+
+            .post-title {
+                font-size: 1.5rem;
             }
+
+            .post-description {
+                font-size: 1.2em;
+            } 
+
+            .post-subdescription {
+                font-size: 1em;
+                color: var(--dark-grey); /* Set a lighter color for the description */
+            }
+        }
+
         </style>
     </Fragment>
     <main>
         <div class="tag-container">
-            <a href="https://www.linkedin.com/sarabicudo" class="tag" target="_blank">Access Portfolio</a>
+            <a href="https://www.behance.net/sarabicudo" class="tag" target="_blank">Access Portfolio</a>
         </div>
-        <ul>
-            {allPosts.map((post) => <li><a href={post.url}><img class="work-img" src={post.frontmatter.image.url}>{post.frontmatter.title}{post.frontmatter.description}</a></li>)}
+        <ul class="post-list">
+            {allPosts.map((post, index) => (
+                <li class={`post-item color-variant-${index % 5}`}>
+                    <a href={post.url} class="post-link">
+                        <img class="work-img" src={post.frontmatter.image.url} alt={post.frontmatter.title} />
+                        <div class="caption">
+                            <h2 class="post-title">{post.frontmatter.title}</h2>
+                            <h3 class="post-description">{post.frontmatter.description}</h3>
+                            <p class="post-subdescription">{post.frontmatter.subdescription}</p>
+                        </div>
+                    </a>
+                </li>
+            ))}
         </ul>
 
-        <ul class="work-content">
-            <li>
-                <figure class="work-container">
+        <ul class="post-list">
+            <li class="post-item color-variant-0">
+                <a href="https://www.linkedin.com/sarabicudo" class="post-link">
                     <img class="work-img" src="/assets/img/digipath.png" alt="Figma Board of the UX/UI Project of the Whatsapp AI Sticker Feature" />
-                    <h2>Digipath</h2>
-                    <h3>Design Job Quiz</h3>
-                    <p>FBAUL</p>
-                </figure>
+                    <div class="caption">
+                        <h2 class="post-title">Digipath</h2>
+                        <h3 class="post-description">Design Job Quiz</h3>
+                        <p class="post-subdescription">FBAUL</p>
+                    </div>
+                </a>
             </li>
-            <li>
-                <figure class="work-container">
+            <li class="post-item color-variant-1">
+                <a href="https://www.linkedin.com/sarabicudo" class="post-link">
                     <img class="work-img" src="/assets/img/big_blue.png" alt="Figma Board of the UX/UI Project of the Refurbishing of the FBAUL Website UX/UI Project" />
-                    <figcaption>
-                        <h2>Big Blue</h2>
-                        <h3>Swimming School</h3>
-                        <p>FBAUL</p>
-                    </figcaption>
-                </figure>
-            </li>
-            <li>
-                <figure class="work-container">
-                    <img class="work-img" src="/assets/img/sticker.png" alt="Figma Board of the UX/UI Project of the Refurbishing of the Super Duper Product" />
-                    <figcaption>
-                        <h2>Smart Stickers</h2>
-                        <h3>Whatsapp Feature</h3>
-                        <p>FBAUL</p>
-                    </figcaption>
-                </figure>
+                    <div class="caption">
+                        <h2 class="post-title">Big Blue</h2>
+                        <h3 class="post-description">Swimming School</h3>
+                        <p class="post-subdescription">FBAUL</p>
+                    </div>
+                </a>
             </li>
         </ul>
     </main>

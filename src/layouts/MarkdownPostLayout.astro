@@ -3,39 +3,143 @@ import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
 ---
 <BaseLayout pageTitle={frontmatter.title}>
-    <p>{frontmatter.pubDate.toString().slice(0,10)}</p>
-    <p><em>{frontmatter.description}</em></p>
-    <p>Written by: {frontmatter.author}</p>
-    <ul class="tag-container">
-        {frontmatter.tags.map(tag => (
-            <li class="tag">
-                <p class="line">{tag.line1}</p>
-                <p class="line">{tag.line2}</p>
-            </li>
-        ))}
-    </ul>
-    <slot />
+    <div class="post-meta">
+        <p class="meta">{frontmatter.pubDate.toString().slice(0,10)}</p>
+        <p class="meta"><em>{frontmatter.description}</em></p>
+        <p class="meta">Written by: {frontmatter.author}</p>
+        <ul class="tag-container">
+            {frontmatter.tags.map(tag => (
+                <li class="tag">
+                    <p class="line">{tag.line1}</p>
+                    <p class="line2">{tag.line2}</p>
+                </li>
+            ))}
+        </ul>
+    </div>
+    <div class="post-content">
+        <slot />
+    </div>
 </BaseLayout>
 
 <style>
     .tag-container {
         display: flex;
-        gap: 10px;
+        gap: 16px;
         padding: 0;
         list-style: none;
-        flex-wrap: wrap; /* Allow tags to wrap to the next line */
+        justify-content: center;
+    }
+
+    .meta {
+        display: flex;
+        justify-content: center;
     }
 
     .tag {
         background-color: var(--green-1);
         color: var(--green-4);
-        padding: 10px;
+        padding: 16px;
         border-radius: 8px;
         text-align: center;
-        width: 100px; /* Set a fixed width for consistent size */
+        width: 120px; /* Set a fixed width for consistent size */
+        margin: 0;
     }
 
     .line {
         margin: 0;
     }
+
+    .line2 {
+        color: var(--grey); /* Set the second line to grey */
+    }
+
+    .post-meta {
+        margin-bottom: 20px;
+    }
+
+    .post-content {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    .post-content img {
+        width: 100%;
+        height: auto;
+        object-fit: cover; /* Ensure the image covers the entire container while maintaining aspect ratio */
+    }
+
+    .post-content .image-wrapper {
+        width: 100%;
+        height: auto;
+        margin: 0; /* Remove default margin from figure */
+        padding: 0; /* Remove default padding from figure */
+    }
+
+    @media only screen and (min-width: 870px) {
+        .tag-container {
+            justify-content: flex-start;
+    }
+
+        .meta {
+            justify-content: flex-start;
+        }
+        
+        .post-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 24px 48px;
+        }
+
+        .post-content .item1 {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            order: 0; /* Reset order for grid layout */
+        }
+
+        .post-content .item2 {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            order: 0; /* Reset order for grid layout */
+        }
+
+        .post-content .item3 {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            order: 0; /* Reset order for grid layout */
+        }
+
+        .post-content .item4 {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            order: 0; /* Reset order for grid layout */
+        }
+    }
 </style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const content = document.querySelector('.post-content');
+        const item1 = document.createElement('div');
+        const item2 = document.createElement('div');
+        const item3 = document.createElement('div');
+        const item4 = document.createElement('div');
+
+        item1.classList.add('item1');
+        item2.classList.add('item2');
+        item3.classList.add('item3');
+        item4.classList.add('item4');
+
+        item1.innerHTML = content.innerHTML.match(/<!-- item1 -->([\s\S]*?)<!-- enditem1 -->/)[1];
+        item2.innerHTML = content.innerHTML.match(/<!-- item2 -->([\s\S]*?)<!-- enditem2 -->/)[1];
+        item3.innerHTML = content.innerHTML.match(/<!-- item3 -->([\s\S]*?)<!-- enditem3 -->/)[1];
+        item4.innerHTML = content.innerHTML.match(/<!-- item4 -->([\s\S]*?)<!-- enditem4 -->/)[1];
+
+        content.innerHTML = '';
+        content.appendChild(item1);
+        content.appendChild(item2);
+        content.appendChild(item3);
+        content.appendChild(item4);
+    });
+</script>

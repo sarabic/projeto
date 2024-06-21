@@ -45,7 +45,7 @@
   --green-4: #13A6A0;
   --green-5: #146965;
 
-  /* gret */
+  /* grey */
   --white: rgba(255, 255, 255, 1);
   --light-grey: #E0E0E0;
   --grey: #999895;
@@ -55,9 +55,14 @@
 
 /* Reset and basic styling */
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   background-color: var(--white);
   scroll-behavior: smooth;
+  cursor: url('/public/assets/svg/cursor.svg') 8 8, auto;
 }
   
 body {
@@ -71,10 +76,7 @@ body {
   font-family: var(--font-primary);
   color: var(--dark-grey);
   text-align: left;
-}
-
-* {
-  box-sizing: border-box;
+  cursor: url('/public/assets/svg/cursor.svg') 8 8, auto;
 }
 
 main {
@@ -88,7 +90,6 @@ main {
 h2 {
   font-size: 1.5rem;
   font-weight: 400;
-  text-align: center;
   position: relative;
   padding-bottom: 24px;
   margin: 0;
@@ -149,8 +150,13 @@ a {
   color: var(--lilac-5);
 }
 
+a:hover {
+  cursor: url('/public/assets/svg/cursor-hover.svg') 8 8, auto;
+}
+
 ul {
-  list-style-type: none;
+  padding-inline-start: 0; /* Remove the left padding */
+  list-style-type: none; /* Optional: remove bullet points if desired */
 }
 
 li {
@@ -171,7 +177,7 @@ label {
 
 .tag {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 8px 16px;
   background-color: var(--lilac-1);
   color: var(--lilac-5);
   border-radius: 8px;
@@ -187,7 +193,7 @@ label {
 .tag-container {
   display: flex;
   justify-content: center;
-  margin: 20px 0;
+  margin: 8px 0 40px 0;
 }
 
 .sections {

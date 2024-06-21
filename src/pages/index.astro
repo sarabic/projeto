@@ -17,6 +17,8 @@ const hidePageTitle = true;
       h3 {
         text-align: left;
         margin: 40px 0 40px 0;
+        display: flex;
+        justify-content: center;
       }
   
       p {
@@ -48,8 +50,13 @@ const hidePageTitle = true;
         display: none;
       }
 
+      .animated-title {
+        padding: 0 8px;
+        font-weight: 500;
+      }
+
       #rotating-star {
-          animation: rotate 10s linear infinite;
+          animation: rotate 24s linear infinite;
           transform-origin: 319.205px 237.5px; /* Coordinates for the center of the star */
       }
 
@@ -75,6 +82,18 @@ const hidePageTitle = true;
           60% { opacity: 0.5; }
           80% { opacity: 0.8; }
           100% { opacity: 1; }
+      }
+
+      .animated-title span:before {
+        content: 'Digital Designer';
+        animation: word-switch 3s infinite;
+      }
+
+      @keyframes word-switch {
+        0% { content: 'Digital Designer'; color: var(--pink-5); }
+        33% { content: 'UX/UI Designer'; color: var(--green-5); }
+        66% { content: 'Human Resources Specialist'; color: var(--yellow-5); }
+        100% { content: 'Digital Designer'; color: var(--pink-5)}
       }
   
       @media (max-width: 870px) {
@@ -122,7 +141,7 @@ const hidePageTitle = true;
       <figure class="hide-mobile" aria-labelledby="sara bicudo text black, grey and lilac text illustration">
           <Fragment set:html={SaraBicudoMobile}/>
       </figure>
-      <h3 style="font-weight:300">A Digital Designer based in Lisbon</h3>
+      <h3 style="font-weight:300">A <span class="animated-title"><span></span></span> based in Lisbon</h3>
     </section>
     <figure class="illustration" aria-labelledby="lilac, green, yellow and pink shapes all mixed together">
       <svg aria-label="pink, lilac, green and yellow geometric shapes all mixed together" width="482" height="400" viewBox="0 0 482 400" fill="none" xmlns="http://www.w3.org/2000/svg">

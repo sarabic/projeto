@@ -7,27 +7,58 @@ import EmailLogo from "/assets/svg/email.svg?raw"
 
 <Fragment slot="head">
   <style>
-    a {
-      padding: 20px 20px;
-      text-decoration: none;
-      border-radius: 20%;
+    
+    .icon {
+      box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.05);
+      background: transparent;
     }
-    a:hover {
-      background-color: #ddd;
-      border-radius: 20%;
-      color: #2D2D2D;
-    }
-    .icons {
-      width: auto;
-      height: 25px;
-      padding-right: 12px;
+
+    .icon-container {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      padding: 10px;
       text-align: center;
       margin: 0 auto;
+      transition: border-radius 0.3s;
+      background: transparent;
+    }
+
+    .icon-container svg {
+      width: 24px;
+      height: 24px;
+      fill: none; /* Inherit color from parent */
+      background: transparent;
+    }
+
+    .icon-container:hover {
+      border-radius: 10px; /* Slightly rounded corners */
+      fill: var(--lilac-1); /* Inherit color from parent */
+    }
+
+    a {
+      text-decoration: none;
     }
   </style>
 </Fragment>
 
-<a href="https://www.linkedin.com/sarabicudo" target="_blank" aria-labelledby="black linkedin logo"><Fragment set:html={LinkedinLogo}/></a>
-<a href="https://www.behance.com/sarabicudo" target="_blank" aria-labelledby="black behance logo"><Fragment set:html={BehanceLogo}/></a> 
-<a href="https://www.instagram.com/sara_bicudo" target="_blank" aria-labelledby="black instagram logo"><Fragment set:html={InstagramLogo}/></a>
-<a href="mailto:bicudo.sara@gmail.com" target="_blank" aria-labelledby="black email logo"><Fragment set:html={EmailLogo}/></a>
+<div class="icon-container">
+  <a class="icon" href="https://www.linkedin.com/sarabicudo" target="_blank" aria-labelledby="black linkedin logo">
+    <Fragment set:html={LinkedinLogo}/>
+  </a>
+</div>
+<div class="icon-container">
+  <a class="icon" href="https://www.behance.com/sarabicudo" target="_blank" aria-labelledby="black behance logo">
+    <Fragment set:html={BehanceLogo}/>
+  </a>
+</div>
+<div class="icon-container">
+  <a class="icon" href="https://www.instagram.com/sara_bicudo" target="_blank" aria-labelledby="black instagram logo">
+    <Fragment set:html={InstagramLogo}/>
+  </a>
+</div>
+<div class="icon-container">
+  <a class="icon" href="mailto:bicudo.sara@gmail.com" target="_blank" aria-labelledby="black email logo">
+    <Fragment set:html={EmailLogo}/>
+  </a>
+</div>

@@ -3,7 +3,8 @@ layout: ../../layouts/MarkdownPostLayout.astro
 title: "Safe Plate"
 pubDate: 2022-07-08
 description: "Food Restriction Management"
-author: "Astro Learner"
+subdescription: "FBAUL"
+author: "Sara Bicudo"
 image:
     url: "/assets/img/safe_plate.png"
     alt: "Thumbnail of Astro arcs."
@@ -14,16 +15,28 @@ tags: [
 ]
 ---
 
-![App mockup with a kiwi background behind it](/assets/img/safe_plate1.png)
+<!-- item1 -->
+<figure class="image-wrapper">
+    <img src="/assets/img/safe_plate1.png" alt="App mockup with a kiwi background behind it">
+</figure>
+<!-- enditem1 -->
 
+<!-- item2 -->
 ## Context
 
-1. **Problem**: First, I created a new Astro project and set up my online accounts.
+**Problem**: Food allergies are a rising Global pandemic... 32 Million people in the US report having at least one food allergy. It is clear that the world is becoming more conscious and alert about what we ingest. 
 
-2. **Challenge**: I then learned how to make pages by creating new `.astro` files and placing them in the `src/pages/` folder.
+**Challenge**: But it can be difficult and time consuming to control all the food we eat...
+<!-- enditem2 -->
 
+<!-- item3 -->
 ## Our Solution
 
-I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+A digital solution that helps people deal with their food restrictions, by finding products, recipes and restaurants that match their diets.
+<!-- enditem3 -->
 
-![Contre-plongée of three healthy dishes](/assets/img/safe_plate2.png)
+<!-- item4 -->
+<figure class="image-wrapper">
+    <img src="/assets/img/safe_plate2.png" alt="Contre-plongée of three healthy dishes">
+</figure>
+<!-- enditem4 -->

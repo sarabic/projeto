@@ -1,12 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Social from '../components/Social.astro';
 const pageTitle = "Contact";
 const hidePageTitle = true;
 ---
 <BaseLayout pageTitle={pageTitle} hidePageTitle={hidePageTitle}>
     <Fragment slot="head">
         <style>
+            main {
+                margin-top: 2rem;
+            }
+
             .contact {
             display: block;
             flex-direction: column;
@@ -75,7 +78,7 @@ const hidePageTitle = true;
             align-items: center;
             color: var(--white);
             font-weight: 200;
-            background-color: var(--lilac-4);
+            background-color: var(--lilac-5);
             border-radius: 5px;
             display: flex;
             justify-content: center;
@@ -85,7 +88,17 @@ const hidePageTitle = true;
             }
     
             .button:hover {
-            background-color: var(--lilac-5);
+            background-color: var(--lilac-4);
+            }
+
+            .tag-list {
+                display: flex;
+                align-items: center;
+                list-style-type: none; /* Remove default list styling */
+                width: fit-content;
+                padding: 0;
+                margin: 0 auto;
+                gap: 16px;
             }
             
             @media only screen and (min-width: 870px) {
@@ -107,15 +120,25 @@ const hidePageTitle = true;
                 .button {
                     width: 30%;
                 }
+
+                .tag-list {
+                    margin: 0;
+                }
             }
         </style>
     </Fragment>
-    <p>This is where I will put my contact info.</p>
     <main class="contact">
         <div>
-            <h2 style="font-weight:600">Let's Work Together</h2>
+            <h2 style="font-weight:600">Let's Chat! :)</h2>
             <h3 style="color: var(--grey)">Fill this form to contact me and start working with me!</h3>
-            <Social/>
+            <ul class="tag-list">
+                <li class="tag-container">
+                    <a href="https://www.behance.net/sarabicudo" class="tag" target="_blank">Access Portfolio</a>
+                </li>
+                <li class="tag-container">
+                    <a href="https://drive.google.com/file/d/13tLxMrWpzMV_TdT0mTGyCr_qjoT8vYKT/view?usp=sharing&usp=embed_facebook" class="tag" target="_blank">Download Resume</a>
+                </li>
+            </ul>
         </div>
         <div class="text-fields">
             <label for="name">Name</label>

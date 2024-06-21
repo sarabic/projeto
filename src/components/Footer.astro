@@ -2,10 +2,10 @@
 ---
 <Fragment slot="head">
   <style>
+
     footer {
       display: flex;
       gap: 1rem;
-      margin-top: 2rem;
       display: block;
       flex-direction: column;
       justify-content: left;
@@ -13,46 +13,57 @@
       border-top: 1px solid rgba(0, 0, 0, 0.2); /* Adjust the border style and color */
       text-align: center;
     }
+
     #contact {
       padding-bottom: 15px;
     }
-  
+
     .footer-bottom p {
       font-size: 0.7rem;
     }
-  
+
     .footer-bottom {
-    display: block;
-    flex-direction: column;
-    justify-content: left;
-    padding: 10px 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.2); /* Adjust the border style and color */
-    text-align: center;
+      display: block;
+      flex-direction: column;
+      justify-content: left;
+      padding: 10px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.2); /* Adjust the border style and color */
+      text-align: center;
     }
-  
+
     .footer-bottom p {
       font-size: 0.7rem;
     }
-  
+
     .footertop-left {
       margin-bottom: 32px;
     }
-  
+
     .footer-right a {
       margin: 4px;
     }
-  
+
+    .footer-right a:hover {
+      text-decoration: underline; /* Add underline on hover */
+    }
+
     @media only screen and (min-width: 870px) {
       .footer-bottom {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          text-align: left;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
       }
     }
   </style>
 </Fragment>
 <footer class="footer-bottom">
-    <p class="footer-left">Copyright © 2024 Sara Bicudo</p>
-    <p class="footer-right"><a href="/" target="_blank">All Rights Reserved</a><span>|</span><a href="/" target="_blank">Terms and Conditions</a><span>|</span><a href="/" target="_blank">Privacy Policy</a></p>
+  <p class="footer-left">Copyright © 2024 Sara Bicudo</p>
+  <p class="footer-right">
+    <a href="/" target="_blank">All Rights Reserved</a>
+    <span>|</span>
+    <a href="/" target="_blank">Terms and Conditions</a>
+    <span>|</span>
+    <a href="/" target="_blank">Privacy Policy</a>
+  </p>
 </footer>
